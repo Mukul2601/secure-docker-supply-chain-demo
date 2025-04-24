@@ -1,0 +1,2 @@
+SBOM Placeholder – Example of tracked packages and licenses.
+Tool used: Trivy SBOM (not executed here due to GitHub sandbox limits)
