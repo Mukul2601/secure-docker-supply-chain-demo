@@ -1,0 +1,140 @@
+/* ── Layout ── */
+.portfolio {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0 0 0.25rem;
+}
+
+.hero h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #646cff;
+  margin: 0 0 1rem;
+}
+
+.tagline {
+  color: #aaa;
+  font-size: 1.05rem;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 3rem 0 1.5rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #646cff;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+/* ── About ── */
+.about-text {
+  color: #ccc;
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+/* ── Skills ── */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-chip {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border: 1px solid #2a2a3e;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.skill-chip:hover {
+  border-color: #646cff;
+  color: #fff;
+}
+
+/* ── Projects ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  border-color: #646cff;
+  transform: translateY(-4px);
+}
+
+.project-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.project-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Contact ── */
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  color: #646cff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.contact-links a:hover {
+  color: #535bf2;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

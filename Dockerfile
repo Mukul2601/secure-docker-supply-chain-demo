@@ -1,12 +1,22 @@
-FROM python:3.10-slim
-
-LABEL maintainer="Mukul Mogha <moghaansh@gmail.com>"
-LABEL description="Secure container demo with minimal CVEs and SBOM"
+# Stage 1: Build the React app
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
-COPY app/hello.py .
+COPY portfolio/package.json portfolio/package-lock.json* ./
+RUN npm ci --production=false
 
-RUN pip install --no-cache-dir flask
+COPY portfolio/ .
+RUN npm run build
 
-CMD ["python", "hello.py"]
+# Stage 2: Serve with nginx
+FROM nginx:stable-alpine
+
+LABEL maintainer="Mukul Mogha <moghaansh@gmail.com>"
+LABEL description="Portfolio landing page with secure container practices"
+
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

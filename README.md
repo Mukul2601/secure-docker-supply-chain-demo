@@ -1,21 +1,43 @@
-# Secure Docker Supply Chain Demo
+# Mukul Mogha — Portfolio
 
-This is a mock project created by Mukul Mogha to demonstrate secure container image practices, SBOM awareness, and CVE tracking for Docker's Supply Chain Security role.
+A React-based portfolio landing page, containerized with Docker following secure supply chain practices.
 
-## 🔐 Key Concepts Demonstrated
-- Secure Dockerfile using `slim` base image
-- Basic Flask app to simulate real container usage
-- GitHub Actions CI pipeline
-- Trivy scanner for vulnerability checks
-- SBOM (placeholder) & CVE Fix Log
+## 🚀 Quick Start
 
-## 🚀 Run Locally
+### Development
 ```bash
-docker build -t secure-demo .
-docker run -p 5000:5000 secure-demo
+cd portfolio
+npm install
+npm run dev
 ```
 
-## 🛡️ Security Practices Used
-- Slim base image for reduced attack surface
-- Explicit `--no-cache-dir` pip installs
-- Simulated SBOM and CVE awareness
+### Docker
+```bash
+docker build -t portfolio .
+docker run -p 8080:80 portfolio
+```
+Then open [http://localhost:8080](http://localhost:8080).
+
+## 🔐 Security Practices
+- Multi-stage Docker build to minimize image size and attack surface
+- Alpine-based images (`node:20-alpine`, `nginx:stable-alpine`)
+- GitHub Actions CI with Trivy vulnerability scanning
+- SBOM awareness and CVE tracking
+
+## 🛠️ Tech Stack
+- **Frontend**: React 19 + Vite
+- **Container**: Docker (multi-stage build)
+- **Web Server**: Nginx (Alpine)
+- **CI/CD**: GitHub Actions + Trivy Scanner
+
+## 📁 Project Structure
+```
+├── portfolio/          # React application
+│   ├── src/           # Source code
+│   ├── public/        # Static assets
+│   └── package.json   # Dependencies
+├── Dockerfile         # Multi-stage Docker build
+├── CVE-Fix-Log.md     # Security fix log
+├── sbom.txt           # SBOM placeholder
+└── .github/workflows/ # CI pipeline
+```
